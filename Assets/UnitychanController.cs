@@ -9,7 +9,7 @@ public class UnitychanController : MonoBehaviour
     //unitychanを移動させるコンポーネントを入れる
     Rigidbody2D rigid2D;
     //地面の位置
-    private float groundlevel = -3.0f;
+    private float groundLevel = -3.0f;
     //ジャンプの速度
     float jumpVelocity = 20;
     //ジャンプの速度を減衰
@@ -31,11 +31,11 @@ public class UnitychanController : MonoBehaviour
         // 走るアニメーションを再生するために、Animatorのパラメータを調節する
         this.animator.SetFloat("Horizontal", 1);
         // 着地しているかどうかを調べる
-        bool isGround = (transform.position.y > this.groundlevel) ? false : true;
+        bool isGround = (transform.position.y > this.groundLevel) ? false : true;
         this.animator.SetBool("isGround", isGround);
 
         //着地状態でクリックされた場合
-        if (Input.GetMouseButtonDown(0) && isGround) ;
+        if (Input.GetMouseButtonDown(0) && isGround) 
         {
             // 上方向の力をかける
             this.rigid2D.velocity = new Vector2(0, this.jumpVelocity);

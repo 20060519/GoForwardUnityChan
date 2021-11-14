@@ -40,12 +40,12 @@ public class CubeGnerator : MonoBehaviour
             //生成するキューブをランダムに決める
             int n = Random.Range(1, maxBlockNum + 1);
 
-            //生成するキューブを指定する
+            //指定した数だけブロックを生成する
             for (int i = 0; i < n; i++)
             {
                 //キューブの生成
                 GameObject go = Instantiate(cubePrefab);
-                go.transform.position = new Vector2(this.genPosx, offsetY + i * this.spaceY);
+                go.transform.position = new Vector2(this.genPosx, this.offsetY + i * this.spaceY);
             }
             //次のキューブを生成する間隔を決める
             this.span = this.offsetX + this.spaceX * n;
