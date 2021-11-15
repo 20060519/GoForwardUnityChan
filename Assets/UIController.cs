@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
-public class UICon : MonoBehaviour
+public class UIController : MonoBehaviour
 {
     private GameObject gameOverText;
     private GameObject runLengthText;
@@ -34,7 +35,17 @@ public class UICon : MonoBehaviour
             //走った距離を表示する
             this.runLengthText.GetComponent<Text>().text = "Distance:" + len.ToString("F2") + "m";
         }
-        
+
+        //ゲームオーバーになったとき
+        if (this.isGameOver == true)
+        {
+            //クリックされたシーンをロードする
+            if (Input.GetMouseButtonDown(0))
+            {
+                //SampleSceneを読み込む
+                SceneManager.LordScene("SampleScene");
+            }
+        }
     }
 
     public void GameOver()
@@ -43,4 +54,6 @@ public class UICon : MonoBehaviour
         this.gameOverText.GetComponent<Text>().text = "GameOver";
         this.isGameOver = true;
     }
+
 }
+
