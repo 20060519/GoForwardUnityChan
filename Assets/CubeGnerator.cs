@@ -11,7 +11,7 @@ public class CubeGnerator : MonoBehaviour
     //キューブを生成する間隔
     private float span = 1.0f;
     //キューブ生成位置：ｘ座標
-    private float genPosx = -12;
+    private float genPosX = -12;
     //キューブ生成位置オフセット
     private float offsetY = 0.3f;
     //キューブの縦方向の間隔
@@ -33,21 +33,22 @@ public class CubeGnerator : MonoBehaviour
     void Update()
     {
         this.delta += Time.deltaTime;
-        //スパン秒以上の時間が経過したかを調べる
+
+        // span秒以上の時間が経過したかを調べる
         if (this.delta > this.span)
         {
             this.delta = 0;
-            //生成するキューブをランダムに決める
+            // 生成するキューブ数をランダムに決める
             int n = Random.Range(1, maxBlockNum + 1);
 
-            //指定した数だけブロックを生成する
+            // 指定した数だけキューブを生成する
             for (int i = 0; i < n; i++)
             {
-                //キューブの生成
+                // キューブの生成
                 GameObject go = Instantiate(cubePrefab);
-                go.transform.position = new Vector2(this.genPosx, this.offsetY + i * this.spaceY);
+                go.transform.position = new Vector2(this.genPosX, this.offsetY + i * this.spaceY);
             }
-            //次のキューブを生成する間隔を決める
+            // 次のキューブまでの生成時間を決める
             this.span = this.offsetX + this.spaceX * n;
         }
 
