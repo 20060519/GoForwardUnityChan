@@ -26,4 +26,15 @@ public class CubeController : MonoBehaviour
         }
 
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Unitycha‚‚É“–‚½‚Á‚½‚Íƒ{ƒŠƒ…[ƒ€‚ğ‚O‚É‚·‚é
+        if (gameObject.tag == "Unitychan")
+        {
+            GetComponent<AudioSource>().volume = 0;
+        }
+        
+    }
 }
+

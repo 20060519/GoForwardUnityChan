@@ -11,7 +11,7 @@ public class CubeGnerator : MonoBehaviour
     //キューブを生成する間隔
     private float span = 1.0f;
     //キューブ生成位置：ｘ座標
-    private float genPosX = -12;
+    private float genPosX = 12;
     //キューブ生成位置オフセット
     private float offsetY = 0.3f;
     //キューブの縦方向の間隔
