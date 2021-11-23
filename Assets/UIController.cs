@@ -21,7 +21,7 @@ public class UIController : MonoBehaviour
     {
         //シーンビューからオブジェクトの実態を探す
         this.gameOverText = GameObject.Find("GameOver");
-        this.gameOverText = GameObject.Find("RunLength");
+        this.runLengthText = GameObject.Find("RunLength");
         
     }
 
