@@ -8,6 +8,8 @@ public class CubeController : MonoBehaviour
     private float speed = -12f;
     //Á–ÅˆÊ’u
     private float deadline = -10f;
+
+    [SerializeField] private AudioSource blockse;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +32,9 @@ public class CubeController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         //Unitycha‚‚É“–‚½‚Á‚½‚Íƒ{ƒŠƒ…[ƒ€‚ğ‚O‚É‚·‚é
-        if (gameObject.tag == "Unitychan")
+        if (gameObject.tag != "Unitychan")
         {
-            GetComponent<AudioSource>().volume = 0;
+            blockse.Play();
         }
         
     }
